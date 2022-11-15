@@ -22,9 +22,7 @@ class MessageController extends Controller
         $newname=Helper::renameFile($path,$request->file('piecejoint')->getClientOriginalName());
         $upload=$request->piecejoint->move(public_path($path),$newname);
 
-
-
-
+        
         if ($this->isOnline()) {
             $mail_data=[
                 'recipient'=>'mamemoussandoye5@gmail.com',

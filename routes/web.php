@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactContrller;
 use App\Http\Controllers\MessageController;
 
 /*
@@ -17,4 +18,7 @@ use App\Http\Controllers\MessageController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::view('/', 'welcome')->name('home');
+Route::view('/addContactview', 'addContact')->name('addContactview');
 Route::post('send',[MessageController::class,'sendMail'])->name('sendMail');
+Route::post('addContactform',[ContactContrller::class,'addContact'])->name('addContact');
