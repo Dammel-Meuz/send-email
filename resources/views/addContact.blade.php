@@ -10,7 +10,7 @@
             <form action="{{route('addContact')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
-                {{-- @if (Session::has('error'))
+                @if (Session::has('error'))
                     <div class="alert alert-danger">
                         {{Session::get('error')}}
                     </div>
@@ -27,12 +27,13 @@
                     {{Session::get('errormail')}}
                 </div>
                     
-                @endif --}}
+                @endif
+                
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" name="firstName" placeholder="Entrer your name" >
                     @error('firstName')<span class="text-danger">{{$message}}</span>@enderror
-                </div>N
+                </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
                     <input type="text" class="form-control" name="lastName" placeholder="Entrer your name" >
@@ -48,14 +49,26 @@
                     <input type="phone" class="form-control" name="phone" placeholder="Entrer your email">
                     @error('phone')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
-                <div class="form-group">
-                    <label for="email">Type Contact</label>
-                    <select class="form-select" aria-label="Default select example" name="type" placeholder="type de contact">
-                        <option selected >--</option>
-                        <option value="Membre" >Membre</option>
-                        <option value="Stagiaire">Stagiaire</option>
-                        <option value="Coach">Coach</option>
-                      </select>
+                <div class="form-group d-flex flex-row bd-highlight mb-3">
+                    <div class="form-check m-3">
+                        <input class="form-check-input" type="checkbox"  name="membre" value="membre" >
+                        <label class="form-check-label" for="Membre">
+                         Membre
+                        </label>
+                      </div>
+                      <div class="form-check m-3">
+                        <input class="form-check-input" type="checkbox"name="admine" value="admine">
+                        <label class="form-check-label" for="Admine">
+                          Admine
+                        </label>
+                      </div>
+                      <div class="form-check m-3">
+                        <input class="form-check-input" type="checkbox"  name="stagiaire" value="stagiaire" >
+                        <label class="form-check-label" for="Stagiaire" checked >
+                         Stagiaire
+                        </label>
+                      </div>
+                      
                 </div>
                 <button type="submit" class="btn btn-primary m-3" >Ajouter</button>
             </form>

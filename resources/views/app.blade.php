@@ -23,7 +23,7 @@
                 <a class="nav-link" href="{{route('addContactview')}}">Ajouter un contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Liste des contacts</a>
+                <a class="nav-link" href="{{route('listContactview')}}">Liste des contacts</a>
               </li>
             </ul>
           </div>
