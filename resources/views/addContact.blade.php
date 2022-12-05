@@ -3,11 +3,14 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3 mt-5" >
-            <h4>Ajout Contact</h4><hr>
-            <form action="{{route('addContact')}}" method="post" enctype="multipart/form-data">
+<div class="">
+    <div class="row justify-content-center">
+        
+        <div class="col-md-6 mt-5" >
+            <h3>Ajouter Contact</h3>
+            <div class="p-4 border-2 border border-secondary rounded">
+            
+            <form class="" action="{{route('addContact')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 @if (Session::has('error'))
@@ -31,12 +34,12 @@
                 
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" name="firstName" placeholder="Entrer your name" >
+                    <input type="text" class="form-control" name="firstName" placeholder="Entrer your first Name" >
                     @error('firstName')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" name="lastName" placeholder="Entrer your name" >
+                    <input type="text" class="form-control" name="lastName" placeholder="Entrer your last Name" >
                     @error('lastName')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
@@ -72,6 +75,25 @@
                 </div>
                 <button type="submit" class="btn btn-primary m-3" >Ajouter</button>
             </form>
+        </div>
+        </div>
+        <div class="row justify-content-center" >
+            <div class="col-md-6 mt-3">
+                <h3>Importer Contact à partir d'un fichier excel </h3>
+                <div class="p-4 border-2 border border-secondary rounded">
+                   
+                    <form action="" method="post" class="" enctype="multipart/form-data">
+                        <label for="">Choisir fichier </label>
+                        <input type="file" name="file" class="form-control">
+                        <div class="mt-3">
+                            <button class="btn btn-primary float-right">Ajouter</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+           
         </div>
     </div>
 </div>

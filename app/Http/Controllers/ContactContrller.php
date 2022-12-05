@@ -53,11 +53,23 @@ class ContactContrller extends Controller
     //    //->where('type', '=', 'stagiaire')
     //    ->select('contacts.*', 'roles.*')
     //   ->get();
-             $contact=Contact::paginate(2);
+           // $contact=Contact::paginate(2);
 
     //   dd($contact);
 
-      return view('listContact', compact('contact'));
+      return view('listContact');
     }
-    
+    public function indexAdmine(){
+        // return Pointage::join('pointeurs','pointages.pointeur_id','=','pointeurs.id')->get('pointeur*','pointage*');
+  //    $contact = DB::table('contacts')
+  //    ->join('roles', 'contacts.id', '=', 'roles.contact_id')
+  //    //->where('type', '=', 'stagiaire')
+  //    ->select('contacts.*', 'roles.*')
+  //   ->get();
+          $contact=Contact::paginate(2);
+
+  //   dd($contact);
+
+    return view('listContactAdmin', compact('contact'));
+  }
 }

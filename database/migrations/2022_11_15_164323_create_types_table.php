@@ -15,7 +15,7 @@ class CreateTypesTable extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->bigincrements('id');
-            $table->foreignId('contact_id')->constrained('contacts');
+            $table->foreignId('contact_id')->constrained('contacts')->ondelete('cascade');
             $table->string('type');
             $table->timestamps();
         });

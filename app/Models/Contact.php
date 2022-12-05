@@ -11,7 +11,7 @@ class Contact extends Model
     use HasFactory;
 
     protected $fillable=[
-        'firstName',
+            'firstName',
             'lastName',
             'email',
             'phone'
@@ -19,5 +19,17 @@ class Contact extends Model
     ];
     public function role(){
         return $this->hasMany(Role::class);
+    }
+
+
+
+            
+    public function scopeSearch($query,$term){
+            $term="%$term%";
+            $query->where(function($query) use ($term){
+                $query->where('firstName','like',$term)
+                      ->orwhere('lastName','like',$term);
+            });
+            
     }
 }
