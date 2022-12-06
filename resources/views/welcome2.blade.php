@@ -2,14 +2,16 @@
 
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 
 <div class="row">
-<div class="col-md-3">
+<div class="col-md-2">
   
 </div>
-        <div class="col-md-6 m-5" >
-            <h4>Send Email Grouper</h4><hr>
+        <div class="col-md-8" >
+            <h4>Send Email Grouper</h4>
+            <div class="p-4 border-2 border border-secondary rounded-5">
+            
             <form action="{{route('sendMailgroupe')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
@@ -44,7 +46,7 @@
                           <div class="form-check m-3">
                             <input class="form-check-input" type="checkbox"name="admine" value="admine">
                             <label class="form-check-label" for="Admine">
-                              Admine
+                              Admin
                             </label>
                           </div>
                           <div class="form-check m-3">
@@ -57,12 +59,12 @@
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" name="subject" placeholder="Entrer your subject" value="{{old('subject')}}">
+                    <input type="text" class="form-control" name="subject" placeholder="subject" value="{{old('subject')}}">
                     @error('subject')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea type="text" cols="4" rows="4" class="form-control" name="message" placeholder="Entrer your message" value="{{old('message')}}"></textarea>
+                    <textarea id="myeditorinstance" type="text" cols="4" rows="4" class="form-control" name="message" placeholder="message" value="{{old('message')}}"></textarea>
                     @error('name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
@@ -74,6 +76,25 @@
                 <button type="submit" class="btn btn-primary m-3" >Send</button>
             </form>
         </div>
+
+        <div class="col-md-2">
+  
         </div>
+        </div>
+
+        <script>
+            tinymce.init({
+selector: 'textarea#myeditorinstance',
+plugins: 'code',
+menu: {
+    happy: {title: 'Happy', items: 'code'}
+},
+menubar: 'none'
+});
+</script>
+        <div class="col-md-3">
+  
+        </div>
+     </div>
     
 @endsection

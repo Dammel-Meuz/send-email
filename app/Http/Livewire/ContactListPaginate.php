@@ -12,6 +12,7 @@ class ContactListPaginate extends Component
     use WithPagination;
    public $search;
    public $byFirstName='';
+   public $checkedContact=[];
 
     public function render()
     {
@@ -54,5 +55,9 @@ class ContactListPaginate extends Component
         // if($del){
         //     $this->dispatchBrowserEvent('delete');
         // }
+    }
+    public function message(){
+       // dd($this->checkedContact);
+       return redirect()->to(route('home'));
     }
 }

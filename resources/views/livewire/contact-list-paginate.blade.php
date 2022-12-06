@@ -1,11 +1,12 @@
 <div class="container ">
   {{-- <div>tableau de bord</div> --}}
-    <div class="d-flex justify-content-center">
 
+    <div class="d-flex justify-content-center">
+      
         <div class="card m-5 border border-primary" style="width: 15rem;">
             
             <div class="card-body">
-              <h5 class="card-title">Admin</h5>
+              <h5 class="card-title">Admin </h5>
               <p class="card-text" "><h1><strong>{{$admine}}</strong></h1></p>
               <a href='{{route('listContactadminview')}}'>voire list</a>
             </div>
@@ -47,6 +48,13 @@
           <input type="text" class="form-control" name="firstName" placeholder="Entrer your name" wire:model.debounce.350='search' >
     
       </div>
+      <div>
+        @if ($checkedContact)
+            <button class="btn btn-info" wire:click='message()'>Nombre de contact selectionner({{ count($checkedContact)}})</button>
+        @endif
+       
+        
+      </div>
     </div>
  
     <div>
@@ -65,7 +73,8 @@
       @foreach($contact as $cont)
         <tbody>
           <tr>
-            <td>{{$cont->id}}</td>
+            <td>  <input class="form-check-input" type="checkbox"  name="membre" value="{{$cont->id}}" wire:model="checkedContact" ><img class="rounded mx-auto d-block" style="width: 50px;height:50px;" src="{{asset('/image/images.png')}}" alt=""></td> 
+            {{-- <td>{{$cont->id}}</td> --}}
             <td>{{$cont->firstName}}</td>
             <td>{{$cont->lastName}}</td>
             <td>{{$cont->email}}</td>

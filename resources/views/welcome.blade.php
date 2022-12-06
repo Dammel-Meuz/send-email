@@ -9,11 +9,12 @@
     <div class="row">
 
         <div class="col-md-2">
-            <h3>Colonne 1</h3>
+            
         </div>
         
 
-        <div class="col-md-8  text-ligth">
+        <div class="col-md-8  text-ligth pb-5">
+            <h1 class="fw-bold">Envoi de mail individuel</h1>
             <div class="p-4 border-2 border border-secondary rounded-5">
             <form action="{{route('sendMail')}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -55,23 +56,26 @@
     
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" class="form-control" name="name" placeholder="Entrer your name" value="{{old('name')}}">
+                   
+                    <input type="text" class="form-control" name="name" placeholder="name" value="{{old('name')}}">
                     @error('name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
-                    <label for="text">Email</label>
+                    
+                    @livewire('email-search')
+                    {{-- <label for="text">Email</label>
                     <input type="email" class="form-control" name="email" placeholder="Entrer your email" value="{{old('email')}}">
-                    @error('email')<span class="text-danger">{{$message}}</span>@enderror
+                    @error('email')<span class="text-danger">{{$message}}</span>@enderror --}}
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <input type="text" class="form-control" name="subject" placeholder="Entrer your subject" value="{{old('subject')}}">
+                    <input type="text" class="form-control" name="subject" placeholder="subject" value="{{old('subject')}}">
                     @error('subject')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
                     {{-- <textarea type="text" cols="4" rows="4" class="form-control" name="message" placeholder="Entrer your message" value="{{old('message')}}"></textarea> --}}
-                    <textarea name="message" id="myeditorinstance"></textarea>
+                    <textarea name="message" id="myeditorinstance" placeholder="message"></textarea>
                     @error('name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
@@ -97,7 +101,7 @@
         </div>
 
         <div class="col-md-2">
-            <h3>Colonne 3</h3>
+            
         </div>
         
     </div>

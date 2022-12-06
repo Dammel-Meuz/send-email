@@ -34,22 +34,22 @@
                 
                 <div class="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" name="firstName" placeholder="Entrer your first Name" >
+                    <input type="text" class="form-control" name="firstName" placeholder="first Name" >
                     @error('firstName')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" name="lastName" placeholder="Entrer your last Name" >
+                    <input type="text" class="form-control" name="lastName" placeholder="last Name" >
                     @error('lastName')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="email" placeholder="Entrer your email" >
+                    <input type="text" class="form-control" name="email" placeholder="email" >
                     @error('email')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="email">Phone</label>
-                    <input type="phone" class="form-control" name="phone" placeholder="Entrer your email">
+                    <input type="phone" class="form-control" name="phone" placeholder="phone">
                     @error('phone')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group d-flex flex-row bd-highlight mb-3">
@@ -62,7 +62,7 @@
                       <div class="form-check m-3">
                         <input class="form-check-input" type="checkbox"name="admine" value="admine">
                         <label class="form-check-label" for="Admine">
-                          Admine
+                          Admin
                         </label>
                       </div>
                       <div class="form-check m-3">
