@@ -57,7 +57,8 @@ class ContactListPaginate extends Component
         // }
     }
     public function message(){
-       // dd($this->checkedContact);
-       return redirect()->to(route('home'));
+    dd($this->checkedContact);
+    return view('selected-send-mail');
+       //return redirect()->to(route('home'));
     }
 }

@@ -2,14 +2,14 @@
 
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid mt-5 ">
 
 <div class="row">
 <div class="col-md-2">
   
 </div>
-        <div class="col-md-8" >
-            <h4>Send Email Grouper</h4>
+        <div class="col-md-8 text-ligth pb-5" >
+            <h2 class="fw-bold">Envoi de Mail Groupé</h2>
             <div class="p-4 border-2 border border-secondary rounded-5">
             
             <form action="{{route('sendMailgroupe')}}" method="post" enctype="multipart/form-data">
@@ -80,8 +80,8 @@
         <div class="col-md-2">
   
         </div>
-        </div>
-
+    </div>
+</div>
         <script>
             tinymce.init({
 selector: 'textarea#myeditorinstance',

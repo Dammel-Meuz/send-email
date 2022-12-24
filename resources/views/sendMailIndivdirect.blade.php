@@ -57,15 +57,15 @@
                 <div class="form-group">
                     <label for="name">Name</label>
                    
-                    <input type="text" class="form-control" name="name" placeholder="name" value="{{old('name')}}">
+                    <input type="text" class="form-control" name="name" placeholder="name" value="{{$contact->firstName.' '. $contact->lastName}}">
                     @error('name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
-                 <label for="text">Email</label>
-                    @livewire('email-search')
-                    {{-- <label for="text">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Entrer your email" value="{{old('email')}}">
-                    @error('email')<span class="text-danger">{{$message}}</span>@enderror --}}
+                    
+                    
+                    <label for="text">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Entrer your email" value="{{$contact->email}}">
+                    @error('email')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="subject">Subject</label>
@@ -84,7 +84,7 @@
                 </div>
     
     
-                <button type="submit" class="btn btn-primary m-3" >Send</button>
+                <button type="submit" class="btn btn-info m-3" >Send</button>
     
             </form>
         </div>

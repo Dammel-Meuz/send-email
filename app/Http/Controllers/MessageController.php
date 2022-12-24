@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -154,4 +155,12 @@ class MessageController extends Controller
             return false;
         }
     }
+
+    public function sendMailindiv($id) {
+    
+        $contact = Contact::find($id);
+        //dd($contact);
+        return view('sendMailIndivdirect',['contact'=>$contact]);
+    }
+
 }

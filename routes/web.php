@@ -27,3 +27,6 @@ Route::view('/addContactview', 'addContact')->name('addContactview');
 Route::post('send',[MessageController::class,'sendMail'])->name('sendMail');
 Route::post('sendgroup',[MessageController::class,'sendMailgroupe'])->name('sendMailgroupe');
 Route::post('addContactform',[ContactContrller::class,'addContact'])->name('addContact');
+
+
+Route::get('/sendmail/{id}',[MessageController::class,'sendMailindiv']);

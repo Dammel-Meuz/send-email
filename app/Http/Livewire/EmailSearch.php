@@ -1,16 +1,19 @@
 <?php
-
 namespace App\Http\Livewire;
-
 use App\Models\Contact;
-use Livewire\Component;
+use Illuminate\Support\Facades\DB;
 
-class EmailSearch extends Component
-{
 
-    public string $query='meuz';
-    public $search='hello';
-    public $email;
+
+// use App\Models\Contact;
+// use Livewire\Component;
+
+// class EmailSearch extends Component
+// {
+
+    // public string $query='meuz';
+    // public $search='hello';
+    // public $email;
 
 
     // public function mount(){
@@ -19,13 +22,33 @@ class EmailSearch extends Component
 
     // }
 
-    public function updatedQuery(){
-        $this->email=Contact::where('email','like','%'.$this->query.'%')->get()->toArray();
-    }
+//     public function updatedQuery(){
+//         $this->email=Contact::where('email','like','%'.$this->query.'%')->get()->toArray();
+//     }
 
+//     public function render()
+//     {
+//         return view('livewire.email-search');
+
+//     }
+// }
+
+
+
+use Livewire\Component;
+class EmailSearch extends Component
+{
+    public $ottPlatform = '';
+ 
+    //public $webseries=Contact::all();  
     public function render()
     {
-        return view('livewire.email-search');
+        $webseries =Contact::all();
 
+        //dd($webseries);
+       // dd($array);
+        return view('livewire.email-search',[
+            'webseries'=>$webseries,
+        ])->extends('layouts.app');
     }
 }

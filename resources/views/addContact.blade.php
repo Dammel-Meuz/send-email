@@ -3,12 +3,14 @@
 
 @section('content')
 
-<div class="">
-    <div class="row justify-content-center">
-        
-        <div class="col-md-6 mt-5" >
-            <h3>Ajouter Contact</h3>
-            <div class="p-4 border-2 border border-secondary rounded">
+<div class="container-fluid mt-5 pb-5">
+    <div class="row">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-8 text-ligth " >
+            <h2 class="fw-bold">Ajouter Contact</h2>
+            <div class="p-4 border-2 border border-secondary rounded-5">
             
             <form class="" action="{{route('addContact')}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -78,15 +80,15 @@
         </div>
         </div>
         <div class="row justify-content-center" >
-            <div class="col-md-6 mt-3">
+            <div class="col-md-7 mt-3">
                 <h3>Importer Contact à partir d'un fichier excel </h3>
-                <div class="p-4 border-2 border border-secondary rounded">
+                <div class="p-4 border border-secondary rounded-5">
                    
                     <form action="" method="post" class="" enctype="multipart/form-data">
                         <label for="">Choisir fichier </label>
                         <input type="file" name="file" class="form-control">
                         <div class="mt-3">
-                            <button class="btn btn-primary float-right">Ajouter</button>
+                            <button class="btn btn-primary">Ajouter</button>
                         </div>
                         
                     </form>
