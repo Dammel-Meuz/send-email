@@ -20,7 +20,7 @@
         <p class="card-text" ><h1><strong>{{$stagiaire}}</strong></h1></p>
 
       </div>
-      <a class="navbar-brand border border-primary bg-primary text-center p-2 m-2" href='{{route('listContactadminview')}}'>Liste des Stagiaire</a>
+      <a class="navbar-brand border border-primary bg-primary text-center p-2 m-2" href='{{route('listContactstagiaireview')}}'>Liste des Stagiaire</a>
     </div>
 
     <div class="col-md-2 card m-1 border border-info" style="backgrounde-color: rgb(112, 144, 120);">
@@ -61,7 +61,7 @@
         <input type="text" class="form-control" name="firstName" placeholder="Entrer your name" wire:model.debounce.350='search' >
         <div>
           @if ($checkedContact)
-              <button class="btn btn-info p-2 m-2" wire:click='message()'>Nombre de contact selectionner({{ count($checkedContact)}})</button>
+              <button class="btn btn-primary p-2 m-2" wire:click='message()'>Nombre de contact selectionner({{ count($checkedContact)}})</button>
           @endif
          
           

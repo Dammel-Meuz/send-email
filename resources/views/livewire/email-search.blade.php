@@ -27,11 +27,11 @@
 </div> --}}
 <div>
     <div class="form-group">
-        <select class="form-control" id="select2-dropdown">
-            <option value="">Select Option</option>
+        <select class="form-control" id="email" name="email">
             {{-- <option value="{{ $webseries }}">"{{ $webseries }}"</option> --}}
+            <option value="">--</option>
             @foreach($webseries as $item)
-            <option value="{{ $item->email }}">{{ $item->email }}</option>
+            <option value="{{ $item->email }}" >{{$item->email }}</option>
             @endforeach
         </select>
     </div>
@@ -39,9 +39,9 @@
 @push('scripts')
 <script>
     $(document).ready(function () {
-        $('#select2-dropdown').select2();
-        $('#select2-dropdown').on('change', function (e) {
-            var data = $('#select2-dropdown').select2("val");
+        $('#email').select2();
+        $('#email').on('change', function (e) {
+            var data = $('#email').select2("value");
             @this.set('ottPlatform', data);
         });
     });

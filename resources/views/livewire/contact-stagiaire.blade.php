@@ -21,7 +21,7 @@
             <p class="card-text" ><h1><strong>{{$stagiaire}}</strong></h1></p>
     
           </div>
-          <a class="navbar-brand border border-primary bg-primary text-center p-2 m-2" href='{{route('listContactstagiaireview')}}'>liste des Stagiares</a>
+          <a class="navbar-brand border border-primary bg-primary text-center p-2 m-2" href='{{route('listContactadminview')}}'>liste des Stagiares</a>
         </div>
     
         <div class="col-md-2 card m-1 border border-info" style="backgrounde-color: rgb(112, 144, 120);">

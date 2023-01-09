@@ -72,4 +72,13 @@ class ContactContrller extends Controller
 
     return view('listContactAdmin', compact('contact'));
   }
+
+  public function indexStagiare(){
+
+      $contact=Contact::paginate(2);
+
+//   dd($contact);
+
+return view('listContactStagiaire', compact('contact'));
+}
 }
